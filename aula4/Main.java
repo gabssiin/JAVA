@@ -11,6 +11,7 @@ public class Main {
     for(int i=1; i< v.length; ++i){
         if (v[i]==x){
             return i;
+            
         }
     }
     return -1;
