@@ -5,7 +5,7 @@ public class Main {
         System.out.println("Olá Mundo");
     }
 
-    
+
     public static int busca(int[]v, int x){
 
     for(int i=1; i< v.length; ++i){
@@ -14,7 +14,8 @@ public class Main {
         }
     }
     return -1;
-}
+    
+} 
 
 
 public static boolean estaOrdenado(int[] v){
