@@ -54,6 +54,8 @@ public class Main {
         } while(cd<4);
 
 */
+
+/* 
         int n, s=0;
         String resp;
         Scanner ler= new Scanner(System.in);        
@@ -66,10 +68,32 @@ public class Main {
             resp = ler.next();
         }while (resp.equals("5"));
         System.out.println("A soma de todos os valores é: " +s);
-            
+            */
         
 
 
+/*
+ * 
+ * 
+ * 
+ * 
+ * 
+ * PARTE 3 
+ * FOR IN RANGE
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+
+/* 
+for(int a = 0; a<=10;a++){
+    System.out.println("te amo");
+}
+*/
 
 
 
@@ -78,9 +102,15 @@ public class Main {
 
 
 
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Escolha uma das nossas datas especiais: ");
+        int repeticoes = scanner.nextInt();
 
-
+        for (int i = 1; i <= repeticoes; i++) {
+            System.out.println("Te amo meu bem!");
+        }
+    
 
 
 
