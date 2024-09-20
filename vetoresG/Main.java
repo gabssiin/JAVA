@@ -26,18 +26,36 @@ public class Main {
                 
             }*/
 
-            double vetor[] = {3.1,8.5,9,-7};
-           int pos = Arrays.binarySearch(vetor,1)
-            for (double d : vetor) {
-                System.out.println(d+" ");
+            /*
+            int bi[] = {3,7,6,1,9,4,2};
+            for (int b:bi){
+                System.out.print(b+" ");
+            }
+            System.out.println("");
+           int pos = Arrays.binarySearch(bi,8);  //como não existe o valor 8 no nosso vetor ele retorna -8 pois não existe um indice negativo
+                System.out.println("Encontrei o valor nessa posição: " + pos); */
+               
                 
+
+
+            int pren[] = new int[20];
+            Arrays.fill(pren, 0);
+            for (int valor:pren){
+                System.out.print(valor+" ");
             }
 
 
 
 
 
+
+
+
+
+
+
+            }
         }
 
-    }
+
 
