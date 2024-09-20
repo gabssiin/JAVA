@@ -68,7 +68,7 @@ public class Main {
             resp = ler.next();
         }while (resp.equals("5"));
         System.out.println("A soma de todos os valores é: " +s);
-            */
+           ler.close() */
         
 
 
@@ -110,7 +110,7 @@ for(int a = 0; a<=10;a++){
         for (int i = 1; i <= repeticoes; i++) {
             System.out.println("Te amo meu bem!");
         }
-    
+            scanner.close();
 
 
 

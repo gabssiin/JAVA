@@ -29,6 +29,7 @@ public class Main {
                 break;
         }
         System.out.println(t);
+        ler.close();
     }
     
 }
