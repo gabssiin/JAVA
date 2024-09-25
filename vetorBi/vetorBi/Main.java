@@ -1,16 +1,11 @@
 import java.sql.SQLOutput;
-import java.util.Scanner;
 public class Main {
     public static final int TAM = 16;
     public static void main(String[] args) {
-        Scanner ler = new Scanner(System.in);
-        
         int[] binario1 = new int[TAM];
         int[] binario2 = new int[TAM];
-        System.out.print("Digite um número inteiro: ");
-        int num1 = ler.nextInt();
-        System.out.print("Digite outro número inteiro: ");
-        int num2 = ler.nextInt();
+        int num1 = 1323;
+        int num2 = 937;
         preencherVetorBinario(binario1, num1);
         imprimirVetor(binario1);
         preencherVetorBinario(binario2, num2);
