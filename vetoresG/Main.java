@@ -1,10 +1,11 @@
 package vetoresG;
 import java.util.Arrays;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int v[] = {3,2,8,7,5,4};
+      /*     int v[] = {3,2,8,7,5,4};
         //System.out.print("Tamanho do vetor"+ v.length); para usar o length de forma mais inteligente:
-      /*   
+      
         for(int c=0; c<=v.length-1; c++){
            // System.out.print(v[c] + "-" );
             System.out.println("Na posição: " +c+ "temos o valor: " +v[c]);
@@ -37,25 +38,25 @@ public class Main {
                
                 
 
-
+/* 
             int pren[] = new int[20];
             Arrays.fill(pren, 0);
             for (int valor:pren){
                 System.out.print(valor+" ");
             }
+*/
+/* 
+Scanner ler = new Scanner(System.in);
+
+double[] media= new double[6];
+
+public static void gerarMedia(int[] n1, int[]n2,int[]medias){
+    for(int i=0;i<n1.length; ++i){
+
+        medias[i] = (n1[i]*2.0+n2[i] * 3.0/5.0);*/
+        
 
 
-
-
-
-
-
-
-
-
-
-            }
-        }
-
-
+    }
+}
 
