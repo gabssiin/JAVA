@@ -1,3 +1,6 @@
+/*2. Crie um programa que le 6 valores inteiros e, em seguida, mostre na tela os valores lidos. */
+
+
 package ListaC04pdf.Ex2;
 import java.util.Scanner;
 
