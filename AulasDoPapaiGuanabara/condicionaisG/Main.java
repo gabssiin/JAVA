@@ -1,4 +1,4 @@
-package condicionaisG;
+package AulasDoPapaiGuanabara.condicionaisG;
 
 import java.util.Scanner;
 

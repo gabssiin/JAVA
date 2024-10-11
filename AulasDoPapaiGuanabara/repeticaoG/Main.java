@@ -1,4 +1,4 @@
-package repeticaoG;
+package AulasDoPapaiGuanabara.repeticaoG;
 
 import java.util.Scanner;
 
