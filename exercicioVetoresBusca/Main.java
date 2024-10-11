@@ -4,13 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] vetor = new int[10];
-
-        // Preenchendo o vetor com valores informados pelo usuário
-        System.out.println("Digite 10 valores inteiros:");
-        for (int i = 0; i < 10; i++) {
-            System.out.print("Valor " + (i + 1) + ": ");
-            vetor[i] = input.nextInt();
-        }
+        preencher(vetor);
+       
 
         // Verificando se o vetor está ordenado
         boolean ordenado = verificarOrdenacao(vetor);
@@ -47,6 +42,16 @@ public class Main {
         } while (continuar.equalsIgnoreCase("s"));
 
         input.close();
+    }
+ // Preenchendo o vetor com valores informados pelo usuário
+    private static void preencher(int[] vetor) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Digite 10 valores inteiros:");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Valor " + (i + 1) + ": ");
+            vetor[i] = input.nextInt();
+ 
+        }
     }
 
     // Método para verificar se o vetor está ordenado em ordem crescente
