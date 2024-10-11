@@ -21,7 +21,7 @@ N[7] = 1
 N[8] = 2
 ...
 */
-package preenchimento2;
+package beecrowd.preenchimento2;
 import java.util.Scanner;
 
 public class Main {

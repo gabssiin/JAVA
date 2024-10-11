@@ -16,7 +16,7 @@ N[2] = 4
 ... */
 
 
- package preenchimentoDeVetor;
+ package beecrowd.preenchimentoDeVetor;
 import java.util.Scanner;
 
 public class Main {

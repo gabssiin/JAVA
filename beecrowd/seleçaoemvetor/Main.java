@@ -8,7 +8,7 @@ Para cada valor do vetor menor ou igual a 10, escreva "A[i] = x", onde i é a po
  */
 
 
-package seleçaoemvetor;
+package beecrowd.seleçaoemvetor;
 import java.util.Scanner;
 
 public class Main {

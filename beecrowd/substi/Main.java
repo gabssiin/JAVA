@@ -19,7 +19,7 @@ X[2] = 63
 X[3] = 1
 ...*/ 
 
-package substi;
+package beecrowd.substi;
 
 import java.util.Scanner;
 

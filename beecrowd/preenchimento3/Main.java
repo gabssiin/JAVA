@@ -6,7 +6,7 @@ A entrada contem um valor de dupla precisão com 4 casas decimais.
 Saída
 Para cada posição do vetor N, escreva "N[i] = Y", onde i é a posição do vetor e Y é o valor armazenado naquela posição. Cada valor do vetor deve ser apresentado com 4 casas decimais. */
 
-package preenchimento3;
+package beecrowd.preenchimento3;
 
 
 

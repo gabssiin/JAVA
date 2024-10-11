@@ -38,7 +38,7 @@ impar[1] = 23
 par[0] = 54
 par[1] = 76
 par[2] = 98 */
-package preenchimento4;
+package beecrowd.preenchimento4;
 import java.util.Scanner;
 
 public class Main {

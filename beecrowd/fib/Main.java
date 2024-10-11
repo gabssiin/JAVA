@@ -8,7 +8,7 @@ Para cada caso de teste da entrada, imprima a mensagem "Fib(N) = X", onde X é o
 
 
 
-package fib;
+package beecrowd.fib;
 import java.util.Scanner;
 
 public class Main {
