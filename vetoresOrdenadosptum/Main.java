@@ -1,4 +1,5 @@
 package vetoresOrdenadosptum;
+import java.util.Arrays;
 /* 
 Faça um programa em Java modular (isto é, cada funcionalidade deve ser implementada em uma função que será chamada no main) que:
 Crie um vetor de tamanho 50 e preencha com valores aleatórios entre 1 e 10 *
@@ -6,10 +7,11 @@ Ordene esse vetor utilizando o algoritmo do bubble sort *
 Imprima o menor e maior valor deste vetor (OBS: não pode utilizar nenhum comando de repetição (laço) nesta questão) *
 Imprima a mediana deste vetor (OBS: não pode utilizar nenhum comando de repetição (laço) nesta questão)  *
 Imprima uma listagem onde cada linha tem um valor que está no vetor e a quantidade de vezes que esse valor aparece no vetor *
-Crie um novo vetor que não tenha valores repetidos (OBS: você deve criar esse vetor do tamanho exato necessário) ?
+Crie um novo vetor que não tenha valores repetidos (OBS: você deve criar esse vetor do tamanho exato necessário)  v.length?
 OBS: a entrega deve ser realizada anexando um arquivo .java e um print screen (ou vários) mostrando o resultado da execução do seu programa
 */
 import java.util.Random;
+import java.util.Arrays;
 
 public class Main{
     public static void main(String[] args) {
@@ -22,10 +24,35 @@ public class Main{
      imprimir(v);
      imprimirMaioreMenor(v);
      imprimirMediana(v);
+     System.out.println("Aqui está a quantidade de aparições de cada valor no vetor: ");
      imprimirFrequencias(v);
+     vetornaorepetido(v);
      
 
     }
+    
+    public static int[] vetornaorepetido(int[] v) {
+        // Primeiro, vamos contar quantos elementos únicos existem
+        int tamanhoUnico = (int) Arrays.stream(v).distinct().count();
+        int[] vSemRepetidos = new int[tamanhoUnico];
+        
+        // Agora, vamos preencher o vetor sem repetidos
+        int index = 0;
+        for (int elemento : v) {
+            if (index == 0 || elemento != vSemRepetidos[index - 1]) {
+                vSemRepetidos[index] = elemento;
+                index++;
+            }
+        }
+        
+        // Imprimindo o vetor sem repetidos
+        System.out.println("Vetor sem valores repetidos: ");
+        imprimir(vSemRepetidos);
+        
+        return vSemRepetidos;
+    }
+    
+
     public static void imprimirFrequencias(int[] v) {
         if (v.length == 0) {
             System.out.println("Vetor vazio.");
@@ -38,12 +65,12 @@ public class Main{
             if (v[i] == elementoAtual) {
                 contagem++;
             } else {
-                System.out.println(elementoAtual + ": " + contagem);
+                System.out.println("O valor: "+ elementoAtual + " aparece: " + contagem + " vezes");
                 elementoAtual = v[i];
                 contagem = 1;
             }
         }
-        System.out.println(elementoAtual + ": " + contagem); // Imprime o último elemento
+        System.out.println("O valor: "+ elementoAtual + " aparece: " + contagem + " vezes"); // Imprime o último elemento
     }
 
 
