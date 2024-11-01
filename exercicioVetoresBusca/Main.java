@@ -50,7 +50,7 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.print("Valor " + (i + 1) + ": ");
             vetor[i] = input.nextInt();
- 
+            input.close();
         }
     }
 

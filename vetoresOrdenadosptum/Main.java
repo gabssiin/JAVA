@@ -1,5 +1,6 @@
 package vetoresOrdenadosptum;
 import java.util.Arrays;
+
 /* 
 Faça um programa em Java modular (isto é, cada funcionalidade deve ser implementada em uma função que será chamada no main) que:
 Crie um vetor de tamanho 50 e preencha com valores aleatórios entre 1 e 10 *
@@ -7,9 +8,10 @@ Ordene esse vetor utilizando o algoritmo do bubble sort *
 Imprima o menor e maior valor deste vetor (OBS: não pode utilizar nenhum comando de repetição (laço) nesta questão) *
 Imprima a mediana deste vetor (OBS: não pode utilizar nenhum comando de repetição (laço) nesta questão)  *
 Imprima uma listagem onde cada linha tem um valor que está no vetor e a quantidade de vezes que esse valor aparece no vetor *
-Crie um novo vetor que não tenha valores repetidos (OBS: você deve criar esse vetor do tamanho exato necessário)  v.length?
+Crie um novo vetor que não tenha valores repetidos (OBS: você deve criar esse vetor do tamanho exato necessário)  *
 OBS: a entrega deve ser realizada anexando um arquivo .java e um print screen (ou vários) mostrando o resultado da execução do seu programa
 */
+
 import java.util.Random;
 
 
@@ -73,7 +75,7 @@ public class Main{
                 contagem = 1;
             }
         }
-        System.out.println("O valor: "+ elementoAtual + " aparece: " + contagem + " vezes"); // Imprime o último elemento
+        System.out.println("O valor: "+ elementoAtual + " aparece: " + contagem + " vezes"); 
     }
 
 

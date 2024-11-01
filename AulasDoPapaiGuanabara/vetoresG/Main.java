@@ -3,6 +3,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+
+        
       /*     int v[] = {3,2,8,7,5,4};
         //System.out.print("Tamanho do vetor"+ v.length); para usar o length de forma mais inteligente:
       

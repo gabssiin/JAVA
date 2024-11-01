@@ -17,6 +17,7 @@ public class Main {
         for (int i = 0; i < 6; i++) {
             System.out.println("Valor " + (i + 1) + ":");
             v[i] = ler.nextInt();
+            ler.close();
         }
     }
 

@@ -20,6 +20,7 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.print("Valor " + (i + 1) + ": ");
             v[i] = ler.nextInt();
+            ler.close();
         }
     }
 
