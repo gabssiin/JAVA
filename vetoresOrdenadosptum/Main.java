@@ -11,7 +11,7 @@ Crie um novo vetor que não tenha valores repetidos (OBS: você deve criar esse 
 OBS: a entrega deve ser realizada anexando um arquivo .java e um print screen (ou vários) mostrando o resultado da execução do seu programa
 */
 import java.util.Random;
-import java.util.Arrays;
+
 
 public class Main{
     public static void main(String[] args) {
@@ -22,21 +22,24 @@ public class Main{
      bubbleSort(v,v.length);
      System.out.println("Depois da ordenação com bubbleSort: ");
      imprimir(v);
+     System.out.println(" ");
      imprimirMaioreMenor(v);
      imprimirMediana(v);
+     System.out.println(" ");
      System.out.println("Aqui está a quantidade de aparições de cada valor no vetor: ");
      imprimirFrequencias(v);
+     System.out.println(" ");
      vetornaorepetido(v);
      
 
     }
     
     public static int[] vetornaorepetido(int[] v) {
-        // Primeiro, vamos contar quantos elementos únicos existem
+    
         int tamanhoUnico = (int) Arrays.stream(v).distinct().count();
         int[] vSemRepetidos = new int[tamanhoUnico];
         
-        // Agora, vamos preencher o vetor sem repetidos
+    
         int index = 0;
         for (int elemento : v) {
             if (index == 0 || elemento != vSemRepetidos[index - 1]) {
@@ -45,7 +48,7 @@ public class Main{
             }
         }
         
-        // Imprimindo o vetor sem repetidos
+       
         System.out.println("Vetor sem valores repetidos: ");
         imprimir(vSemRepetidos);
         
