@@ -1,4 +1,4 @@
-package AulaMarcio.aula0.aula1;
+package AulasMarcio.num2;
 
 import java.util.Scanner;
 

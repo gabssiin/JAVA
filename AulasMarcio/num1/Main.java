@@ -1,4 +1,4 @@
-package AulaMarcio.aula0;
+package AulasMarcio.num1;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class Main {
         // System.out.println("Hello world!");
         // imprimeLiterais();
         // leituraDados();
-       // estatisticas();
+        estatisticas();
     }
 
     public static void imprimeLiterais() {
@@ -59,7 +59,7 @@ public class Main {
             System.out.println("Você é um idoso");
         }
     }
- 
+
     public static void estatisticas() {
         int num, soma = 0, qtd = 0;
         double media;

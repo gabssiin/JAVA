@@ -1,9 +1,8 @@
-package AulaMarcio.aula0.aula2;
+package AulasMarcio.num3;
 
 import java.util.Scanner;
 
 public class Main {
-
     public static Scanner ler = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -23,5 +22,4 @@ public class Main {
             System.out.println("Você digitou " + qtdNumInvalidos + " número(s) inválido(s)");
         }
     }
-
 }
