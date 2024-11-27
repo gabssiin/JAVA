@@ -1,4 +1,3 @@
-
 public class Main {
     public static final int TAM = 16;
     public static void main(String[] args) {
