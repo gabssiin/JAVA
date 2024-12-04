@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 class Produto {
@@ -29,7 +27,8 @@ class Produto {
 
 public class ControleEstoque {
     public static final Scanner ler = new Scanner(System.in);
-    public static List<Produto> produtos = new ArrayList<>();
+    public static Produto[] produtos = new Produto[10]; // Capacidade fixa para 10 produtos
+    public static int indice = 0; // Controla o índice do próximo produto a ser adicionado
 
     public static void main(String[] args) {
         int opcao;
@@ -83,30 +82,34 @@ public class ControleEstoque {
     }
 
     public static void cadastrarProduto() {
-        System.out.print("Nome do produto: ");
-        String nome = ler.nextLine();
+        if (indice < produtos.length) {
+            System.out.print("Nome do produto: ");
+            String nome = ler.nextLine();
 
-        System.out.print("Categoria do produto: ");
-        String categoria = ler.nextLine();
+            System.out.print("Categoria do produto: ");
+            String categoria = ler.nextLine();
 
-        System.out.print("Preço do produto: ");
-        double preco = ler.nextDouble();
+            System.out.print("Preço do produto: ");
+            double preco = ler.nextDouble();
 
-        System.out.print("Quantidade do produto: ");
-        int quantidade = ler.nextInt();
-        ler.nextLine(); // Limpar o buffer
+            System.out.print("Quantidade do produto: ");
+            int quantidade = ler.nextInt();
+            ler.nextLine(); // Limpar o buffer
 
-        Produto produto = new Produto(nome, categoria, preco, quantidade);
-        produtos.add(produto);
-        System.out.println("Produto cadastrado com sucesso!");
+            Produto produto = new Produto(nome, categoria, preco, quantidade);
+            produtos[indice++] = produto;
+            System.out.println("Produto cadastrado com sucesso!");
+        } else {
+            System.out.println("Espaço insuficiente para cadastrar mais produtos.");
+        }
     }
 
     public static void listarProdutos() {
-        if (produtos.isEmpty()) {
+        if (indice == 0) {
             System.out.println("Nenhum produto cadastrado.");
         } else {
-            for (Produto p : produtos) {
-                p.exibirProduto();
+            for (int i = 0; i < indice; i++) {
+                produtos[i].exibirProduto();
             }
         }
     }
@@ -116,9 +119,9 @@ public class ControleEstoque {
         String categoria = ler.nextLine();
 
         boolean encontrou = false;
-        for (Produto p : produtos) {
-            if (p.categoria.equalsIgnoreCase(categoria)) {
-                p.exibirProduto();
+        for (int i = 0; i < indice; i++) {
+            if (produtos[i].categoria.equalsIgnoreCase(categoria)) {
+                produtos[i].exibirProduto();
                 encontrou = true;
             }
         }
@@ -129,7 +132,15 @@ public class ControleEstoque {
     }
 
     public static void ordenarProdutos() {
-        produtos.sort((p1, p2) -> p1.nome.compareToIgnoreCase(p2.nome));
+        for (int i = 0; i < indice - 1; i++) {
+            for (int j = i + 1; j < indice; j++) {
+                if (produtos[i].nome.compareToIgnoreCase(produtos[j].nome) > 0) {
+                    Produto temp = produtos[i];
+                    produtos[i] = produtos[j];
+                    produtos[j] = temp;
+                }
+            }
+        }
         System.out.println("Produtos ordenados por nome.");
     }
 
@@ -137,16 +148,19 @@ public class ControleEstoque {
         System.out.print("Informe o nome do produto a ser removido: ");
         String nome = ler.nextLine();
 
-        Produto produtoRemovido = null;
-        for (Produto p : produtos) {
-            if (p.nome.equalsIgnoreCase(nome)) {
-                produtoRemovido = p;
+        int posicao = -1;
+        for (int i = 0; i < indice; i++) {
+            if (produtos[i].nome.equalsIgnoreCase(nome)) {
+                posicao = i;
                 break;
             }
         }
 
-        if (produtoRemovido != null) {
-            produtos.remove(produtoRemovido);
+        if (posicao != -1) {
+            for (int i = posicao; i < indice - 1; i++) {
+                produtos[i] = produtos[i + 1];
+            }
+            produtos[--indice] = null; // Reduzir o índice e limpar a posição
             System.out.println("Produto removido com sucesso.");
         } else {
             System.out.println("Produto não encontrado.");
@@ -157,31 +171,37 @@ public class ControleEstoque {
         System.out.print("Informe o nome do produto para atualizar o preço: ");
         String nome = ler.nextLine();
 
-        Produto produtoEncontrado = null;
-        for (Produto p : produtos) {
-            if (p.nome.equalsIgnoreCase(nome)) {
-                produtoEncontrado = p;
+        boolean encontrado = false;
+        for (int i = 0; i < indice; i++) {
+            if (produtos[i].nome.equalsIgnoreCase(nome)) {
+                System.out.print("Informe o novo preço: ");
+                double novoPreco = ler.nextDouble();
+                produtos[i].preco = novoPreco;
+                System.out.println("Preço atualizado com sucesso.");
+                encontrado = true;
                 break;
             }
         }
 
-        if (produtoEncontrado != null) {
-            System.out.print("Informe o novo preço: ");
-            double novoPreco = ler.nextDouble();
-            produtoEncontrado.preco = novoPreco;
-            System.out.println("Preço atualizado com sucesso.");
-        } else {
+        if (!encontrado) {
             System.out.println("Produto não encontrado.");
         }
     }
 
     public static void listarSubtotalPorCategoria() {
         System.out.println("Produtos com subtotal por categoria:");
-        produtos.stream()
-                .collect(java.util.stream.Collectors.groupingBy(p -> p.categoria))
-                .forEach((categoria, listaProdutos) -> {
-                    double subtotal = listaProdutos.stream().mapToDouble(Produto::valorEmEstoque).sum();
-                    System.out.println("Categoria: " + categoria + " | Subtotal em estoque: R$" + subtotal);
-                });
+
+        for (int i = 0; i < indice; i++) {
+            String categoria = produtos[i].categoria;
+            double subtotal = 0;
+
+            for (int j = 0; j < indice; j++) {
+                if (produtos[j].categoria.equalsIgnoreCase(categoria)) {
+                    subtotal += produtos[j].valorEmEstoque();
+                }
+            }
+
+            System.out.println("Categoria: " + categoria + " | Subtotal em estoque: R$" + subtotal);
+        }
     }
 }
